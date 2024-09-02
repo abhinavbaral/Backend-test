@@ -1,6 +1,11 @@
 const fs = require('node:fs');
-fs.writeFile("Abc.txt",hello, function(err){
-    if(err) {
+
+
+const content = 'Hello, world!';
+
+
+fs.writeFile("Abc.txt", content, function(err) {
+    if (err) {
         console.error(err);
     } else {
         console.log("The file was saved!");
