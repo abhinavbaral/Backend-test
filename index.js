@@ -15,10 +15,19 @@ fs.writeFile("Abc.txt", content, function(err) {
 
 
 fs.appendFile("Abc.txt", nice, function(err) {
-    
+
     if (err) {
         console.error(err);
     } else {
         console.log("The file was appende!");
+    }
+});
+ 
+fs.rename("Abc.txt","filetest.txt", function(err) {
+    
+    if (err) {
+        console.error(err);
+    } else {
+        console.log("The file was renamed!");
     }
 });
