@@ -31,3 +31,12 @@ fs.rename("Abc.txt","filetest.txt", function(err) {
         console.log("The file was renamed!");
     }
 });
+
+fs.copyFile("filetest.txt", "./copy/copy.txt", function(err) {
+    
+    if (err) {
+        console.error(err);
+    } else {
+        console.log("The file was copied");
+    }
+});
