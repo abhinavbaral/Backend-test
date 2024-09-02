@@ -2,10 +2,10 @@ const fs = require('node:fs');
 
 
 const content = 'Hello, world!';
-const nice = 'pretty dope shit' ;
+const nice = 'pretty dope shit';
 
 
-fs.writeFile("Abc.txt", content, function(err) {
+fs.writeFile("Abc.txt", content, function (err) {
     if (err) {
         console.error(err);
     } else {
@@ -14,7 +14,7 @@ fs.writeFile("Abc.txt", content, function(err) {
 });
 
 
-fs.appendFile("Abc.txt", nice, function(err) {
+fs.appendFile("Abc.txt", nice, function (err) {
 
     if (err) {
         console.error(err);
@@ -22,9 +22,9 @@ fs.appendFile("Abc.txt", nice, function(err) {
         console.log("The file was appende!");
     }
 });
- 
-fs.rename("Abc.txt","filetest.txt", function(err) {
-    
+
+fs.rename("Abc.txt", "filetest.txt", function (err) {
+
     if (err) {
         console.error(err);
     } else {
@@ -32,11 +32,20 @@ fs.rename("Abc.txt","filetest.txt", function(err) {
     }
 });
 
-fs.copyFile("filetest.txt", "./copy/copy.txt", function(err) {
-    
+fs.copyFile("filetest.txt", "./copy/copy.txt", function (err) {
+
     if (err) {
         console.error(err);
     } else {
         console.log("The file was copied");
+    }
+});
+// Delete the file
+fs.unlink("filetest.txt", function(err) {
+
+    if (err) {
+        console.error("Error deleting the file:", err);
+    } else {
+        console.log("The file was deleted successfully.");
     }
 });
